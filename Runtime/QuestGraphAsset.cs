@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using ScriptableObjectGraph;
+using ScriptableObjectGraph.Core;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 
-namespace ScriptableObjectGraph.Core
+namespace QuestGraph.Core
 {
     [CreateAssetMenu(menuName = "RPG Tools/Quest Graph", order = 120)]
     public class QuestGraphAsset : GuidScriptable, INodeContainer<Questline>

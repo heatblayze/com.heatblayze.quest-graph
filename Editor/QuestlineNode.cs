@@ -1,10 +1,11 @@
-using ScriptableObjectGraph.Core;
+using QuestGraph.Core;
+using ScriptableObjectGraph.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-namespace ScriptableObjectGraph.Editor
+namespace QuestGraph.Editor
 {
     public class QuestlineNode : NodeView
     {

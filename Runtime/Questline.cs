@@ -1,9 +1,11 @@
+using ScriptableObjectGraph;
+using ScriptableObjectGraph.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ScriptableObjectGraph.Core
+namespace QuestGraph.Core
 {
     public class Questline : NodeBase, INodeContainer<QuestNodeBase>
     {
