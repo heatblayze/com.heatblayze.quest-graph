@@ -1,0 +1,16 @@
+{
+    "name": "com.heatblayze.quest-graph.runtime",
+    "rootNamespace": "QuestGraph",
+    "references": [
+        "GUID:a848cce9c730dcb4093d389eb5358861"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

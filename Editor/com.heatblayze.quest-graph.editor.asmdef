@@ -1,0 +1,19 @@
+{
+    "name": "com.heatblayze.quest-graph.editor",
+    "rootNamespace": "QuestGraph.Editor",
+    "references": [
+        "GUID:4cc996f3f7a9a374d9afae75f9ec34ce",
+        "GUID:17431962e27f5b541878bc8daf1c9afb"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
