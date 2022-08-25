@@ -2,6 +2,7 @@
     "name": "com.heatblayze.quest-graph.editor",
     "rootNamespace": "QuestGraph.Editor",
     "references": [
+        "GUID:a848cce9c730dcb4093d389eb5358861",
         "GUID:4cc996f3f7a9a374d9afae75f9ec34ce",
         "GUID:17431962e27f5b541878bc8daf1c9afb"
     ],
