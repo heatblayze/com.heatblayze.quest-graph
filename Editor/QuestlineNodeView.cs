@@ -7,24 +7,24 @@ using UnityEngine;
 
 namespace QuestGraph.Editor
 {
-    public class QuestlineNode : NodeView
+    public class QuestlineNodeView : NodeView
     {
         Questline _questline;
 
-        public QuestlineNode(Questline questline) : base(questline)
+        public QuestlineNodeView(Questline questline) : base(questline)
         {
             _questline = questline;
             title = _questline.name;
         }
     }
 
-    public class QuestlineNodeFactory : NodeViewFactory<Questline>
+    public class QuestlineNodeViewFactory : NodeViewFactory<Questline>
     {
         public override string ContextMenuName => "Questline";
 
         protected override NodeView GenerateNodeView(Questline asset)
         {
-            return new QuestlineNode(asset);
+            return new QuestlineNodeView(asset);
         }
     }
 }
