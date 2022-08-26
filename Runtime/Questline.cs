@@ -1,5 +1,4 @@
 using ScriptableObjectGraph;
-using ScriptableObjectGraph.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +18,10 @@ namespace QuestGraph.Core
 
         [SerializeField]
         NodeBase _entryNode;
+        protected override void OnCreated()
+        {
+            _connections = new NodePort[] { new NodePort() };
+        }
 
         public IEnumerable<QuestNodeBase> GetNodes()
         {
@@ -27,12 +30,26 @@ namespace QuestGraph.Core
 
         public NodeBase CreateNode(Type type)
         {
-            throw new NotImplementedException();
+            QuestNodeBase questNode = CreateInstance(type) as QuestNodeBase;
+            questNode.name = type.Name;
+
+            if (_entryNode == null)
+                _entryNode = questNode;
+            _children.Add(questNode);
+            return questNode;
         }
 
-        protected override void OnCreated()
+        public void AddNode(QuestNodeBase node)
         {
-            _connections = new NodePort[] { new NodePort() };
+
+        }
+
+        public void DeleteNode(QuestNodeBase node)
+        {
+            if (_entryNode == node)
+                _entryNode = null;
+
+            _children.Remove(node);
         }
     }
 }

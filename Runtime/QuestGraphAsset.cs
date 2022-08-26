@@ -1,12 +1,7 @@
-using System.Collections;
+using ScriptableObjectGraph;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using ScriptableObjectGraph;
-using ScriptableObjectGraph.Core;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 
 namespace QuestGraph.Core
@@ -36,43 +31,24 @@ namespace QuestGraph.Core
 
         public NodeBase CreateNode(Type type)
         {
-#if UNITY_EDITOR
-            return CreateQuestline(type);
-#else
-            return null;
-#endif
-        }
-
-        #region Editor
-#if UNITY_EDITOR        
-        public Questline CreateQuestline(System.Type type)
-        {
             Questline questline = CreateInstance(type) as Questline;
             questline.name = type.Name;
-
-            if (_entryNode == null)
-                _entryNode = questline;
-            _questlines.Add(questline);
-
-            AssetDatabase.AddObjectToAsset(questline, this);
-            AssetDatabase.SaveAssets();
             return questline;
         }
 
-        public void DeleteQuestline(Questline questline)
+        public void AddNode(Questline node)
         {
-            if(questline == null) return;
-            if (!_questlines.Contains(questline)) return;
+            if (_entryNode == null)
+                _entryNode = node;
+            _questlines.Add(node);
+        }
 
-            if (_entryNode == questline)
+        public void DeleteNode(Questline node)
+        {
+            if (_entryNode == node)
                 _entryNode = null;
 
-            _questlines.Remove(questline);
-
-            AssetDatabase.RemoveObjectFromAsset(questline);
-            AssetDatabase.SaveAssets();
+            _questlines.Remove(node);
         }
-#endif
-        #endregion
     }
 }
