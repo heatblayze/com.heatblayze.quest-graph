@@ -10,7 +10,7 @@ namespace QuestGraph
     {
         protected override void OnCreated()
         {
-            _connections = new NodePort[] { new NodePort() };
+            _ports = new NodePort[] { new NodePort() };
         }
     }
 }
