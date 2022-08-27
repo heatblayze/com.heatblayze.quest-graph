@@ -9,22 +9,9 @@ namespace QuestGraph.Editor
 {
     public class QuestlineNodeView : NodeView
     {
-        Questline _questline;
-
-        public QuestlineNodeView(Questline questline) : base(questline)
+        public new class NodeViewFactory : NodeViewFactory<QuestlineNodeView, Questline, NodeViewTraits>
         {
-            _questline = questline;
-            title = _questline.name;
-        }
-    }
-
-    public class QuestlineNodeViewFactory : NodeViewFactory<Questline>
-    {
-        public override string ContextMenuName => "Questline";
-
-        protected override NodeView GenerateNodeView(Questline asset)
-        {
-            return new QuestlineNodeView(asset);
+            public override string ContextMenuName => "Questline";
         }
     }
 }
