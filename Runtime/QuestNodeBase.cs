@@ -5,8 +5,5 @@ using UnityEngine;
 
 namespace QuestGraph.Core
 {
-    public abstract class QuestNodeBase : NodeBase
-    {
-
-    }    
+    public abstract class QuestNodeBase : NodeBase { }
 }

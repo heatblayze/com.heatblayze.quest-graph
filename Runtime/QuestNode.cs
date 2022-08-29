@@ -8,9 +8,5 @@ namespace QuestGraph
 {
     public class QuestNode : QuestNodeBase
     {
-        protected override void OnCreated()
-        {
-            _ports = new NodePort[] { new NodePort() };
-        }
     }
 }

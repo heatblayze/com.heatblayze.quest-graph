@@ -9,10 +9,5 @@ namespace QuestGraph.Core
     public class Questline : NodeContainerNode<QuestNodeBase>
     {
         public override string EditorWindowPrefix => "Quest";
-
-        protected override void OnCreated()
-        {
-            _ports = new NodePort[] { new NodePort() };
-        }
     }
 }
